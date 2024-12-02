@@ -21,11 +21,19 @@
     </p>
 
     <hr>
-    <!-- /leaders -->
+    <!-- /leaders for managers -->
     <p>
         <a th:href="@{/leaders}">Leadership Meeting</a>
         (Only for Manager peeps)
     </p>
+
+    <hr>
+    <!-- /systems for admins -->
+    <p>
+        <a th:href="@{/systems}">Systems Meeting</a>
+        (Only for Admin peeps)
+    </p>
+
 
     <!-- Add a logout button -->
     <form action="#" th:action="@{/logout}" method="post">
