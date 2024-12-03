@@ -21,19 +21,20 @@
     </p>
 
     <hr>
-    <!-- /leaders for managers -->
-    <p>
-        <a th:href="@{/leaders}">Leadership Meeting</a>
-        (Only for Manager peeps)
-    </p>
-
-    <hr>
-    <!-- /systems for admins -->
-    <p>
+    <div sec:authorize="hasRole('MANAGER')">
+        <!-- /leaders for managers -->
+        <p>
+            <a th:href="@{/leaders}">Leadership Meeting</a>
+            (Only for Manager peeps)
+        </p>
+    </div>
+    <div sec:authorize="hasRole('ADMIN')">
+        <!-- /systems for admins -->
+        <p>
         <a th:href="@{/systems}">Systems Meeting</a>
         (Only for Admin peeps)
-    </p>
-
+        </p>
+    </div>
 
     <!-- Add a logout button -->
     <form action="#" th:action="@{/logout}" method="post">
